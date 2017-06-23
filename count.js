@@ -3,7 +3,16 @@ let $count = $('#count')
 
 let countState = 1
 
-$button.on('click', function(e){
+const render = count => {
+    $count.val(count)
+}
+
+const addCount = () => {
     countState += 1
-    $count.val(countState)
+    return countState
+}
+
+$button.on('click', function (e) {
+    render(addCount())
 })
+
