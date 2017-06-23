@@ -1,6 +1,9 @@
 let $button = $('#button')
 let $count = $('#count')
 
+let countState = 1
+
 $button.on('click', function(e){
-    $count.val(parseInt(($count.val(), 10) + 1)
+    countState += 1
+    $count.val(countState)
 })
