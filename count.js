@@ -1,10 +1,12 @@
-let $button = $('#button')
-let $count = $('#count')
-
 let countState = 1
 
-const render = count => {
-    $count.val(count)
+const render = (count) => {
+    let dom = `<div>
+                    <input type="number" id="count" value="${count}" />
+                    <button id="button">+ add</button>
+                </div>`
+
+    $('#root').html(dom)
 }
 
 const addCount = () => {
@@ -12,7 +14,9 @@ const addCount = () => {
     return countState
 }
 
-$button.on('click', function (e) {
+render(1)
+
+$(document).on('click', '#button', function (e) {
     render(addCount())
 })
 
